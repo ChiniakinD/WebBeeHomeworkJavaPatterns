@@ -6,7 +6,7 @@ package org.ChiniakinD.patterns.builder;
  *
  * @author Chiniakin Dmitrii
  */
-public class BankAccount {
+public final class BankAccount {
 
     private String firstName;
     private String middleName;
@@ -15,7 +15,7 @@ public class BankAccount {
     private long balance;
     private boolean isActive;
 
-    public BankAccount(BankAccountBuilder bankAccountBuilder) {
+    private BankAccount(BankAccountBuilder bankAccountBuilder) {
         this.firstName = bankAccountBuilder.firstName;
         this.middleName = bankAccountBuilder.middleName;
         this.lastName = bankAccountBuilder.lastName;
@@ -97,11 +97,16 @@ public class BankAccount {
             return new BankAccount(this);
         }
 
-        public boolean isBankAccountUnCorrect() {
+        private boolean isBankAccountUnCorrect() {
             return firstName == null
                     || middleName == null
                     || firstName.trim().isEmpty()
-                    || middleName.trim().isEmpty();
+                    || middleName.trim().isEmpty()
+                    || isAccountNumberUnCorrect();
+        }
+
+        private boolean isAccountNumberUnCorrect() {
+            return !(accountNumber != null && accountNumber.trim().matches("\\d{20}"));
         }
     }
 
