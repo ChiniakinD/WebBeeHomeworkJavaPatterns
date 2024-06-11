@@ -14,10 +14,17 @@ public class FileOnGoogleDisk {
         this.fileState = fileState;
     }
 
+    /**
+     * Устанавливает новое состояние доступности файла.
+     * @param fileState новое состояние доступности файла
+     */
     public void setFileState(FileState fileState) {
         this.fileState = fileState;
     }
 
+    /**
+     * @return строка о текущем состоянии доступности файла
+     */
     public String download() {
         return fileState.downloadFile();
     }
