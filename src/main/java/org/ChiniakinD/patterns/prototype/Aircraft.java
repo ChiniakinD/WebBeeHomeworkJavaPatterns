@@ -12,12 +12,22 @@ public class Aircraft implements Copyable {
     private final boolean presenceOfAutopilot;
     private final int speed;
 
+    /**
+     * Конструктор для создания экземпляра класса Aircraft.
+     * @param name имя самолета.
+     * @param presenceOfAutopilot наличие автопилота.
+     * @param speed скорость самолета.
+     */
     public Aircraft(String name, boolean presenceOfAutopilot, int speed) {
         this.name = name;
         this.presenceOfAutopilot = presenceOfAutopilot;
         this.speed = speed;
     }
 
+    /**
+     * Создает и возвращает копию объекта Aircraft.
+     * @return копия объекта Aircraft.
+     */
     @Override
     public Aircraft copy() {
         return new Aircraft(name, presenceOfAutopilot, speed);
