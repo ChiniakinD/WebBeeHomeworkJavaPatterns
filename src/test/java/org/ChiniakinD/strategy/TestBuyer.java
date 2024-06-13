@@ -1,4 +1,4 @@
-package org.ChiniakinD;
+package org.ChiniakinD.strategy;
 
 import org.ChiniakinD.patterns.strategy.Buyer;
 import org.ChiniakinD.patterns.strategy.PayByCard;
