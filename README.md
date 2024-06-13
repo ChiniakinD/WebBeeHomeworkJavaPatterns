@@ -9,3 +9,9 @@
 
 ## В проекте представлены следующие паттерны
 ### state
+### builder 
+### singleton 
+### strategy 
+### prototype 
+### facade 
+### state
