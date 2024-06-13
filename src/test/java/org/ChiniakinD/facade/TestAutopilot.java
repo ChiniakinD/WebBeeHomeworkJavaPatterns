@@ -1,4 +1,4 @@
-package org.ChiniakinD;
+package org.ChiniakinD.facade;
 
 import org.ChiniakinD.patterns.facade.Pilot;
 import org.junit.jupiter.api.BeforeEach;
