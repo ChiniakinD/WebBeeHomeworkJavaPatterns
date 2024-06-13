@@ -1,4 +1,4 @@
-package org.ChiniakinD;
+package org.ChiniakinD.state;
 
 import org.ChiniakinD.patterns.state.DownloadAvailable;
 import org.ChiniakinD.patterns.state.DownloadIsNotAvailable;
