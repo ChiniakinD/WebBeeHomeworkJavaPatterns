@@ -1,4 +1,4 @@
-package org.ChiniakinD;
+package org.ChiniakinD.prototype;
 
 import org.ChiniakinD.patterns.prototype.Aircraft;
 import org.junit.jupiter.api.Test;
