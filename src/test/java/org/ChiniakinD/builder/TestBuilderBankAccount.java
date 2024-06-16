@@ -1,4 +1,4 @@
-package org.ChiniakinD;
+package org.ChiniakinD.builder;
 
 import org.ChiniakinD.patterns.builder.BankAccount;
 import org.junit.jupiter.api.Test;

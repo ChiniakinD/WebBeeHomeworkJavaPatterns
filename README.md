@@ -8,10 +8,10 @@
 Тесты для каждого паттерна находятся в одноименных директориях по пути  src/test/java/org/ChiniakinD.
 
 ## В проекте представлены следующие паттерны
-### state
 ### builder 
 ### singleton 
 ### strategy 
+### facade
 ### prototype 
-### facade 
 ### state
+### factory

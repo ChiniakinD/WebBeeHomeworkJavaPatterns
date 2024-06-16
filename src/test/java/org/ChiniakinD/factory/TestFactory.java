@@ -1,4 +1,4 @@
-package org.ChiniakinD;
+package org.ChiniakinD.factory;
 
 import org.ChiniakinD.patterns.factory.Document;
 import org.ChiniakinD.patterns.factory.DocumentFactory;
