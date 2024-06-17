@@ -35,4 +35,11 @@
 Для запуска тестирования в корневой директории проекта выполните команду:
 **mvn test**
 
-
+### builder 
+### singleton 
+### strategy 
+### facade
+### prototype 
+### state
+### factory
+### memento
