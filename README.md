@@ -16,3 +16,4 @@
 ### state
 ### factory
 ### memento
+### visitor

@@ -1,50 +1,45 @@
 package org.ChiniakinD.visitor;
 
 import org.ChiniakinD.patterns.visitor.*;
-import org.junit.jupiter.api.AfterEach;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
 
 public class TestVisitor {
 
+    @Mock
+    private Logger logger;
     private Visitor visitor;
 
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-
     @BeforeEach
-    public void setUpStreams() {
-        visitor = new Visitor();
-        System.setOut(new PrintStream(outContent));
+    public void setUp() {
+        MockitoAnnotations.openMocks(this);
+        visitor = new Visitor(logger);
     }
 
-    @AfterEach
-    public void cleanUpStreams() {
-        System.setOut(null);
-    }
 
     @Test
-    void visitBluetoothShouldReturnCorrectString() {
+    void visitBluetoothShouldContainCorrectLog() {
         ConnectionType bluetooth = new Bluetooth();
         bluetooth.accept(visitor);
-        assertEquals("Соединение через bluetooth\n", outContent.toString());
+        verify(logger).info("Соединение через bluetooth");
     }
 
     @Test
-    void visitWiFiShouldReturnCorrectString() {
+    void visitWiFiShouldContainCorrectLog() {
        WiFi wiFi = new WiFi();
        wiFi.accept(visitor);
-       assertEquals("Соединение через wifi\n", outContent.toString());
+       verify(logger).info("Соединение через wifi");
     }
 
     @Test
-    void visitWireShouldReturnCorrectString() {
+    void visitWireShouldContainCorrectLog() {
         Wire wire = new Wire();
         wire.accept(visitor);
-        assertEquals("Проводное соединение\n", outContent.toString());
+        verify(logger).info("Проводное соединение");
     }
 }

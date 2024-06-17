@@ -1,5 +1,7 @@
 package org.ChiniakinD.patterns.visitor;
 
+import org.apache.logging.log4j.Logger;
+
 /**
  * Класс Visitor реализует методы visit интерфейса ConnectionTypeVisitor.
  *
@@ -7,12 +9,18 @@ package org.ChiniakinD.patterns.visitor;
  */
 public class Visitor implements ConnectionTypeVisitor {
 
+    private final Logger logger;
+
+    public Visitor(Logger logger) {
+        this.logger = logger;
+    }
+
     /**
      * @param bluetooth объект Bluetooth
      */
     @Override
     public void visit(Bluetooth bluetooth) {
-        System.out.println("Соединение через bluetooth");
+        logger.info("Соединение через bluetooth");
     }
 
     /**
@@ -20,7 +28,7 @@ public class Visitor implements ConnectionTypeVisitor {
      */
     @Override
     public void visit(WiFi wiFi) {
-        System.out.println("Соединение через wifi");
+        logger.info("Соединение через wifi");
     }
 
     /**
@@ -28,7 +36,7 @@ public class Visitor implements ConnectionTypeVisitor {
      */
     @Override
     public void visit(Wire wire) {
-        System.out.println("Проводное соединение");
+        logger.info("Проводное соединение");
     }
 
 }
